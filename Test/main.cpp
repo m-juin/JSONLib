@@ -1,4 +1,5 @@
 #include "../Utils.hpp"
+#include "../Json.hpp"
 
 #include <functional>
 
@@ -11,6 +12,15 @@ std::vector<std::function<void()>> tests = {
 		std::string result = JSONLib::Utils::Trim(sol);
 		std::cout << result << std::endl;
 	},
+	[]()
+	{
+		JSONLib::Dictionnary dict;
+		dict[0] = 5;
+		dict[1]["toto"] = "tata";
+		std::cout << std::boolalpha << "isInt = " << dict.IsType<int>() << " | isDouble = " << dict.IsType<double>() << " | isString = " << dict.IsType<std::string>() << " | isObject = " << dict.IsType<JSONLib::JSONObject>() << " | isVector = " << dict.IsType<JSONLib::JSONVector>() << std::endl;
+		std::cout << "Dict[0] = " << dict[0].As<int>() << std::endl;
+		std::cout << "Dict[1] = " << std::boolalpha << "isInt = " << dict[1].IsType<int>() << " | isDouble = " << dict[1].IsType<double>() << " | isString = " << dict[1].IsType<std::string>() << " | isObject = " << dict[1].IsType<JSONLib::JSONObject>() << " | isVector = " << dict[1].IsType<JSONLib::JSONVector>() << std::endl;
+	}
 };
 
 int main(int ac, char *av[])

@@ -1,12 +1,12 @@
 #ifndef __JSON_HPP__
 #define __JSON_HPP__
 
-#include "./Parser.hpp"
+#include "Parser.hpp"
 #include "Serializer.hpp"
+#include "Struct.hpp"
 
 namespace JSONLib
 {
-    
 } // namespace JSONLib
 
 
