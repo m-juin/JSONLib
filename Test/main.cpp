@@ -47,6 +47,35 @@ std::vector<std::function<void()>> tests = {
 		for (const std::string &line : result)
 			std::cout << line << std::endl;
 	},
+	[]()
+	{
+		const std::string path = "./Test/simple2.json";
+		std::ifstream opened(path, std::ifstream::in);
+		if (opened.is_open() == false)
+			throw std::runtime_error("File not found!");
+		std::stringstream ss;
+		ss << opened.rdbuf();
+		auto lexer = JSONLib::Parser::BuildLexer(ss.str());
+		for (auto pair : lexer)
+			std::cout << pair.first << " -> " << pair.second << std::endl;
+		// for (const std::string &line : result)
+			// std::cout << line << std::endl;
+	},
+
+	[]()
+	{
+		const std::string path = "./Test/simple.json";
+		std::ifstream opened(path, std::ifstream::in);
+		if (opened.is_open() == false)
+			throw std::runtime_error("File not found!");
+		std::stringstream ss;
+		ss << opened.rdbuf();
+		auto dict = JSONLib::Parser::ParseToDict(ss.str());
+		dict.Print();
+		std::cout << std::endl;
+		// for (const std::string &line : result)
+			// std::cout << line << std::endl;
+	},
 };
 
 int main(int ac, char *av[])
