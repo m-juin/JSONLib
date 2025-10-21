@@ -68,7 +68,7 @@ std::vector<std::function<void()>> tests = {
 		std::stringstream ss;
 		ss << opened.rdbuf();
 		auto dict = JSONLib::Parser::ParseToDict(ss.str());
-		JSONLib::WriteDictToFD(std::cout, dict, 0, true);
+		JSONLib::Serializer::WriteDictToFD(std::cout, dict, 0, true);
 		std::cout << std::endl;
 	},
 	[]()
