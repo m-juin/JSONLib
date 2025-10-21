@@ -37,13 +37,6 @@ namespace JSONLib
 				return std::holds_alternative<T>(content);
 			}
 
-			// const Dictionnary &operator[](const std::string &key)
-			// {
-			// 	if (this->IsType<JSONObject>() == false)
-			// 		auto content = JSONObject{};
-			// 	return std::get<JSONObject>(content)[key];
-			// }
-
 			Dictionnary &operator[](const std::string &key)
 			{
 				std::cout << "here\n";
@@ -80,11 +73,6 @@ namespace JSONLib
 			{
 				return std::get<T>(content);
 			};
-
-			// std::ostream &operator<<(std::ostream &os, const JSONVector &vec)
-			// {
-			//     os <<
-			// }
 	};
 } // namespace JSONLib
 
