@@ -7,7 +7,7 @@
 #include <fstream>
 #include <sstream>
 
-namespace JSONLib
+namespace JSONLib::Serializer
 {
 	inline void WriteDictToFD(std::ostream &fd, const Dictionnary &dict, size_t offset = 0, bool colored = true)
 	{

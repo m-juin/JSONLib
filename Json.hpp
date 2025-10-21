@@ -21,7 +21,7 @@ namespace JSONLib
 	inline void ExportToJSON(const Dictionnary &dict, const std::string &savePath)
 	{
 		std::ofstream os(savePath);
-		WriteDictToFD(os, dict, 0, false);
+		Serializer::WriteDictToFD(os, dict, 0, false);
         os << std::endl;
 		os.close();
 	}
