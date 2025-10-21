@@ -62,12 +62,7 @@ std::vector<std::function<void()>> tests = {
 	[]()
 	{
 		const std::string path = "./Test/simple.json";
-		std::ifstream opened(path, std::ifstream::in);
-		if (opened.is_open() == false)
-			throw std::runtime_error("File not found!");
-		std::stringstream ss;
-		ss << opened.rdbuf();
-		auto dict = JSONLib::Parser::ParseToDict(ss.str());
+		JSONLib::Dictionnary dict = JSONLib::LoadJSON(path);
 		JSONLib::Serializer::WriteDictToFD(std::cout, dict, 0, true);
 		std::cout << std::endl;
 	},
@@ -75,12 +70,7 @@ std::vector<std::function<void()>> tests = {
 	{
 		const std::string iPath = "./Test/simple.json";
 		const std::string oPath = "./Test/target.json";
-		std::ifstream opened(iPath, std::ifstream::in);
-		if (opened.is_open() == false)
-			throw std::runtime_error("File not found!");
-		std::stringstream ss;
-		ss << opened.rdbuf();
-		auto dict = JSONLib::Parser::ParseToDict(ss.str());
+		JSONLib::Dictionnary dict = JSONLib::LoadJSON(iPath);
 		JSONLib::ExportToJSON(dict, oPath);
 	}
 };
