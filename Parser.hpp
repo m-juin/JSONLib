@@ -140,15 +140,6 @@ namespace JSONLib::Parser
 		return {pair, pair2.second};
 	}
 
-	// static std::pair<Dictionnary, size_t> GetNextVectorElem(LexerArray &array, size_t pos)
-	// {
-	//     Dictionnary dict;
-	//     if (array.size() <= pos)
-	//         throw std::runtime_error("Error");
-	//     dict = BuildElement(array, pos + 1);
-	//     return dict;
-	// }
-
 	static std::pair<Dictionnary, size_t> BuildElement(LexerArray &array, size_t pos)
 	{
 		if (pos >= array.size())
@@ -228,39 +219,6 @@ namespace JSONLib::Parser
 		auto array = BuildLexer(input);
 		return BuildElement(array, size_t(0)).first;
 	}
-
-	// static bool isJsonContainer(const std::string &line, const char elem)
-	// {
-	// 	size_t start = 0;
-	// 	size_t pos = 0;
-
-	// 	if ((pos = line.find(':')) != line.npos)
-	// 		start = pos + 1;
-	// 	// std::cout << line.substr(start, line.length() - start)[0] << std::endl;
-	// 	if (Utils::Trim(line.substr(start, line.length() - start))[0] == elem)
-	// 		return true;
-	// 	return false;
-	// }
-
-	// inline void IsValid(std::vector<std::string> &&lines)
-	// {
-	// 	int mapOpenCount = std::count_if(lines.begin(), lines.end(),
-	// 								 [](const std::string &line) { return isJsonContainer(line, '{'); });
-	// 	int mapCloseCount = std::count_if(lines.begin(), lines.end(),
-	// 							  [](const std::string &line) { return isJsonContainer(line, '}'); });
-	//     std::cout << "MAP : " << mapOpenCount << " | " << mapCloseCount << std::endl;
-	// 	if (mapOpenCount - mapCloseCount != 0)
-	// 		throw std::runtime_error("Invalid JSON File.");
-	// 	int arrayOpenCount = std::count_if(lines.begin(), lines.end(),
-	// 							 [](const std::string &line) { return isJsonContainer(line, '['); });
-	// 	int arrayCloseCount = std::count_if(lines.begin(), lines.end(),
-	// 							  [](const std::string &line) { return isJsonContainer(line, ']'); });
-	//     std::cout << "Array : " << arrayOpenCount << " | " << arrayCloseCount << std::endl;
-	// 	if (arrayOpenCount - arrayCloseCount != 0)
-	// 		throw std::runtime_error("Invalid JSON File.");
-	// 	std::cout << "Valid JSON File" << std::endl;
-	// 	// size_t arrayCount = 0;
-	// }
 
 } // namespace JSONLib::Parser
 

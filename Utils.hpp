@@ -58,7 +58,6 @@ namespace JSONLib::Utils
 
 	#ifndef __printColor__
 	#define __printColor__
-	// #define _BOOL_ "\033[1;1m"
 	#define _BOOL_TRUE_ "\033[1;92m"
 	#define _BOOL_FALSE_ "\033[1;91m"
 	#define _INT_ "\033[1;34m"
@@ -71,54 +70,6 @@ namespace JSONLib::Utils
 	#define _BRACE_ "\033[1;93m"
 	#define _RESET_ "\033[0m"
 	#endif 
-
-	// #ifndef LEFT_BRACE
-	// #define LEFT_BRACE 0
-	// #endif
-
-	// #ifndef RIGHT_BRACE
-	// #define RIGHT_BRACE 1
-	// #endif
-
-	// #ifndef LEFT_BRACKET
-	// #define LEFT_BRACKET 2
-	// #endif
-
-	// #ifndef RIGHT_BRACKET
-	// #define RIGHT_BRACKET "RIGHT_BRACKET"
-	// #endif
-
-	// #ifndef COLON
-	// #define COLON "COLON"
-	// #endif
-
-	// #ifndef COMMA
-	// #define COMMA "COMMA"
-	// #endif
-
-	// #ifndef STRING
-	// #define STRING "STRING"
-	// #endif
-
-	// #ifndef NUMBER
-	// #define NUMBER "NUMBER"
-	// #endif
-
-	// #ifndef DOUBLE
-	// #define DOUBLE "DOUBLE"
-	// #endif
-
-	// #ifndef TRUE
-	// #define TRUE "TRUE"
-	// #endif
-
-	// #ifndef FALSE
-	// #define FALSE "FALSE"
-	// #endif
-
-	// #ifndef NULL_TOK
-	// #define NULL_TOK "NULL"
-	// #endif
 
 } // namespace JSONLib::Utils
 
