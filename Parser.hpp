@@ -13,7 +13,7 @@ namespace JSONLib::Parser
 	using LexerToken = std::pair<Utils::TOKEN, const std::string>;
 	using LexerArray = std::vector<LexerToken>;
 
-	JSONLib::Parser::LexerArray BuildLexer(const std::string &input)
+	static JSONLib::Parser::LexerArray BuildLexer(const std::string &input)
 	{
 		LexerArray tree;
 		size_t len = input.length();
