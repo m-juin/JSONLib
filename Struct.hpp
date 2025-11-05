@@ -39,7 +39,6 @@ namespace JSONLib
 
 			Dictionnary &operator[](const std::string &key)
 			{
-				std::cout << "here\n";
 				if (this->IsType<JSONObject>() == false)
 					content = JSONObject{};
 				return std::get<JSONObject>(content)[key];
