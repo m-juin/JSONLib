@@ -16,13 +16,13 @@ namespace JSONLib::Utils
 		return original.substr(firstPos, secondPos - firstPos);
 	}
 
-	inline std::vector<std::string> Split(const std::string &input)
+	inline std::vector<std::string> Split(const std::string &input, const char *charSet = "\n\0")
 	{
 		std::vector<std::string> output;
 		std::string toWork = Trim(input);
 		size_t prevIndex = 0;
 		size_t currentIndex = 0;
-		while ((currentIndex = toWork.find_first_of("\n\0", prevIndex)) != toWork.npos)
+		while ((currentIndex = toWork.find_first_of(charSet, prevIndex)) != toWork.npos)
 		{
 			std::string newOne = toWork.substr(prevIndex, currentIndex - prevIndex);
 			newOne = Trim(newOne);
